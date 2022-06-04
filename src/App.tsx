@@ -1,31 +1,50 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Button, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+
+import {Button, Text, View} from 'react-native';
 
 export type Props = {
   name: string;
   baseEnthusiasmLevel?: number;
 };
 
-const App: React.FC<Props> = ({name, baseEnthusiasmLevel = 0}) => {
-  const [enthusiasmLevel, setEnthusiasmLevel] =
-    React.useState(baseEnthusiasmLevel);
+const Stack = createNativeStackNavigator();
 
-  const onIncrement = () => setEnthusiasmLevel(enthusiasmLevel + 1);
-  const onDecrement = () =>
-    setEnthusiasmLevel(enthusiasmLevel > 0 ? enthusiasmLevel - 1 : 0);
-
-  const getExclamationMarks = (numChars: number) =>
-    numChars > 0 ? Array(numChars + 1).join('!') : '';
-
+const App: React.FC<Props> = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Hello World Miz</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{title: 'Home'}}
+        />
+        <Stack.Screen
+          name="Log"
+          component={LogScreen}
+          options={{title: 'Log'}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {},
-});
+const HomeScreen: React.FC = () => {
+  return (
+    <View>
+      <Text>Hello World</Text>
+      <Button title="Go to log page" />
+    </View>
+  );
+};
+
+const LogScreen: React.FC = () => {
+  return (
+    <View>
+      <Text>Log</Text>
+    </View>
+  );
+};
 
 export default App;
