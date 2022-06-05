@@ -1,6 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
+import HomePage from './pages/Authentication/Home.page';
 
 import LoginPage from './pages/Authentication/Login.page';
 
@@ -19,12 +20,10 @@ const App: React.FC<Props> = () => {
         screenOptions={{
           animation: 'slide_from_right',
           fullScreenGestureEnabled: true,
+          headerShown: false,
         }}>
-        <Stack.Screen
-          name="Login"
-          component={LoginPage}
-          options={{title: 'ورود', statusBarStyle: 'light'}}
-        />
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Login" component={LoginPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

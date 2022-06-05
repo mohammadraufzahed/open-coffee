@@ -1,19 +1,22 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Dimensions, Image, StyleSheet, View} from 'react-native';
 
 type Props = {};
+
+const {width} = Dimensions.get('screen');
 
 const Cover: React.FC<Props> = () => {
   const image = require('../../../assets/images/covers/1.png');
   return (
-    <View style={styles.container}>
-      <Image source={image} />
+    <View>
+      <Image source={image} style={styles.image} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  image: {
+    width: width * 0.95,
     borderRadius: 10,
   },
 });
