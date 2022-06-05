@@ -23,11 +23,6 @@ public class MainActivity extends ReactActivity {
     return "mizMobile";
   }
 
-  @Override
-  protected String getJSMainModuleName() {
-    return "src/index";
-  }
-
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView
    * is created and
