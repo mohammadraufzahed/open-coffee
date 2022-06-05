@@ -4,7 +4,7 @@ import {Image, StyleSheet, View} from 'react-native';
 type Props = {};
 
 const Cover: React.FC<Props> = () => {
-  const image = require('../../../public/images/covers/1.png');
+  const image = require('../../../assets/images/covers/1.png');
   return (
     <View style={styles.container}>
       <Image source={image} />
