@@ -4,7 +4,14 @@ import {Dimensions, Image, StyleSheet, View} from 'react-native';
 type Props = {};
 
 const {width} = Dimensions.get('screen');
-
+/**
+ * @name Cover
+ * @description Cover is a image component
+ * @example
+ * <Cover src="http://example.com/first.png" />
+ * @function
+ * @returns {React.FC<Props>}
+ */
 const Cover: React.FC<Props> = () => {
   const image = require('../../../assets/images/covers/1.png');
   return (

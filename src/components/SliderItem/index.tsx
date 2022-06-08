@@ -10,6 +10,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Cover from '../Cover';
 const {width} = Dimensions.get('window');
 
+/**
+ * @name SliderItem
+ * @description Slider item component
+ * @example
+ * <SliderItem item={item} /> 
+ */
 const SliderItem: React.FC = () => {
   return (
     <TouchableOpacity style={styles.container} activeOpacity={0.9}>

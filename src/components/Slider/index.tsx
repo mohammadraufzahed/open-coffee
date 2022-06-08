@@ -3,6 +3,13 @@ import {Animated, Dimensions, FlatList, StyleSheet, View} from 'react-native';
 import {ExpandingDot} from 'react-native-animated-pagination-dots';
 import SliderItem from '../SliderItem';
 
+/**
+ * @name Slider
+ * @description Slider component
+ * @example
+ * <Slider data={} />
+ * @returns {}
+ */
 const Slider: React.FC = () => {
   const flatListRef = useRef<FlatList | null>(null);
   const scrollX = useRef(new Animated.Value(0)).current;
