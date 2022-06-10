@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: width * 0.035,
-    paddingVertical: height * 0.007,
+    width: width * 0.1,
+    height: height * 0.03,
     borderRadius: 17,
   },
   outdoorContainer: {
