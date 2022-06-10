@@ -1,10 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {FilterItemProps, FilterItemTypes} from '../../types/FilterItem';
-import OutdoorSVG from '../../Svgs/OutdoorSVG';
-import OutdoorFoodSVG from '../../Svgs/OutdoorFoodSVG';
-import WorkSVG from '../../Svgs/WorkSVG';
-import SmokeSVG from '../../Svgs/SmokeSVG';
+import {FilterItemProps} from '../../types/FilterItem';
+import Icon from '../Icon';
 
 const names = {
   all: 'همه',
@@ -12,22 +9,6 @@ const names = {
   outdoorFood: 'بیرون بر',
   smoke: 'مناسب سیگار',
   work: 'کار',
-};
-
-type IconProps = {
-  name: FilterItemTypes;
-};
-
-const Icon: React.FC<IconProps> = ({name}) => {
-  return name === 'all' ? null : name === 'outdoor' ? (
-    <OutdoorSVG style={styles.buttonIcon} />
-  ) : name === 'outdoorFood' ? (
-    <OutdoorFoodSVG style={styles.buttonIcon} />
-  ) : name === 'smoke' ? (
-    <SmokeSVG style={styles.buttonIcon} />
-  ) : name === 'work' ? (
-    <WorkSVG style={styles.buttonIcon} />
-  ) : null;
 };
 
 /**
@@ -51,7 +32,7 @@ const FilterItem: React.FC<FilterItemProps> = ({type}) => {
           <Text style={{...styles.buttonText, ...styles[`${type}ButtonText`]}}>
             {names[type]}
           </Text>
-          <Icon name={type} />
+          <Icon name={type} margin={true} />
         </View>
       )}
     </TouchableOpacity>
@@ -72,9 +53,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: 'IRANSansX-Light',
-  },
-  buttonIcon: {
-    marginLeft: 10,
   },
   allButtonView: {
     backgroundColor: '#C49D68',
