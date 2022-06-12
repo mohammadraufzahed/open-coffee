@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    marginTop: height * 0.02,
+    marginTop: height * 0.03,
     alignItems: 'center',
     paddingRight: 16,
   },
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontFamily: 'IRANSansX-Bold',
     fontSize: 12,
+    marginLeft: 5,
   },
 });
 
