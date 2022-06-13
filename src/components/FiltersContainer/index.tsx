@@ -1,5 +1,5 @@
-import React from 'react';
-import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {Animated, Dimensions, ScrollView, StyleSheet, Text} from 'react-native';
 import FilterItem from '../FilterItem';
 
 const {height} = Dimensions.get('screen');
@@ -11,8 +11,16 @@ const {height} = Dimensions.get('screen');
  * <FiltersContainer />
  */
 const FiltersContainer: React.FC = () => {
+  const viewOpacity = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.timing(viewOpacity, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
+  }, [viewOpacity]);
   return (
-    <View style={styles.container}>
+    <Animated.View style={{...styles.container, opacity: viewOpacity}}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {/* <FlatList
             data={FilterData}
@@ -28,7 +36,7 @@ const FiltersContainer: React.FC = () => {
         <FilterItem type="all" />
       </ScrollView>
       <Text style={styles.title}>فیلتر های پرطرفدار :</Text>
-    </View>
+    </Animated.View>
   );
 };
 

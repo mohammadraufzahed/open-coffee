@@ -1,5 +1,5 @@
-import React, {useRef} from 'react';
-import {Animated, Dimensions, FlatList, StyleSheet, View} from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {Animated, FlatList, StyleSheet, View} from 'react-native';
 import {ExpandingDot} from 'react-native-animated-pagination-dots';
 import SliderItem from '../SliderItem';
 
@@ -13,8 +13,16 @@ import SliderItem from '../SliderItem';
 const Slider: React.FC = () => {
   const flatListRef = useRef<FlatList | null>(null);
   const scrollX = useRef(new Animated.Value(0)).current;
+  const viewOpacity = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.timing(viewOpacity, {
+      toValue: 1,
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
+  }, [viewOpacity]);
   return (
-    <View>
+    <Animated.View style={{opacity: viewOpacity}}>
       <View style={styles.slider}>
         <FlatList
           data={[0, 1, 2, 3, 4]}
@@ -36,27 +44,29 @@ const Slider: React.FC = () => {
         data={[0, 1, 2, 3, 4]}
         expandingDotWidth={30}
         scrollX={scrollX}
-        dotStyle={{
-          width: 10,
-          height: 10,
-          backgroundColor: '#347af0',
-          borderRadius: 5,
-          marginHorizontal: 5,
-        }}
-        containerStyle={{
-          bottom: 10,
-          left: 20,
-        }}
+        dotStyle={styles.dotStyle}
+        containerStyle={styles.dotContainer}
         inActiveDotColor="white"
         activeDotColor="white"
       />
-    </View>
+    </Animated.View>
   );
 };
 
 const styles = StyleSheet.create({
   slider: {
     height: 200,
+  },
+  dotStyle: {
+    width: 10,
+    height: 10,
+    backgroundColor: '#347af0',
+    borderRadius: 5,
+    marginHorizontal: 5,
+  },
+  dotContainer: {
+    bottom: 10,
+    left: 20,
   },
 });
 

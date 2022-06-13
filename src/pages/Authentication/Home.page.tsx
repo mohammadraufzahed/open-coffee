@@ -5,7 +5,7 @@ import Slider from '../../components/Slider';
 import StoreList from '../../components/StoreList';
 const HomePage: React.FC = () => {
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container}}>
       <Slider />
       <FiltersContainer />
       <StoreList />

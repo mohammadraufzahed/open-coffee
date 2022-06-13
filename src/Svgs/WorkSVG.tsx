@@ -5,7 +5,7 @@ type props = {
   color?: string | null;
 };
 const WorkSVG: React.FC<props> = ({style, color}) => {
-  const pathColor = color ?? '#FFB5A3';
+  const pathColor = color ?? '#77D9DF';
   return (
     <Svg width={12} height={12} fill="none" style={style} color="red">
       <Path
