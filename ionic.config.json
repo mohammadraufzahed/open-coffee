@@ -1,0 +1,7 @@
+{
+  "name": "ir.mizteam.miz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
