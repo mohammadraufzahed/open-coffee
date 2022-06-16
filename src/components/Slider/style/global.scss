@@ -1,0 +1,65 @@
+.container {
+  padding-top: 4vh;
+  width: 100vw;
+  position: relative;
+  .slider {
+    display: flex;
+    justify-content: center;
+  }
+  > .dott_container {
+    position: absolute;
+    bottom: 1vh;
+    left: 7vw;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+    .active_bullet {
+      position: relative;
+      width: 5vw;
+      animation: active 1s ease forwards;
+      overflow: hidden;
+      opacity: 1;
+      border-radius: 4px !important;
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: #c49d68;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        z-index: 2000;
+        bottom: 0;
+        animation: active_scroll 5s ease forwards;
+      }
+    }
+    .bullet {
+      width: 2vw;
+      background-color: #ffffff;
+      opacity: 0.5;
+      height: 1.2vh;
+      border-radius: 100%;
+      transition-property: width;
+      transition: 1s ease;
+    }
+  }
+}
+
+@keyframes active {
+  0% {
+    width: 0vw;
+  }
+  100% {
+    width: 5vw;
+    opacity: 1;
+  }
+}
+
+@keyframes active_scroll {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
