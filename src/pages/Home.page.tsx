@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import FiltersContainer from '../../components/FiltersContainer';
-import Slider from '../../components/Slider';
-import StoreList from '../../components/StoreList';
+import FiltersContainer from '../components/FiltersContainer';
+import Slider from '../components/Slider';
+import StoreList from '../components/StoreList';
 const HomePage: React.FC = () => {
   return (
     <View style={{...styles.container}}>
