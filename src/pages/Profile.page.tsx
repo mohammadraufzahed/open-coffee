@@ -1,35 +1,29 @@
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  Text,
-  Pressable,
-  ScrollView,
-} from 'react-native';
-import AnonymouseUser from '../Svgs/AnonymouseUser';
+import {View, StyleSheet, Dimensions, Text, ScrollView} from 'react-native';
+import Profile from '../components/Profile';
+import {ProfileScreens} from '../stacks/ProfileStack';
 import FaqSVG from '../Svgs/FaqSVG';
 import LogoutSVG from '../Svgs/LogoutSVG';
 import ReceiptItemSVG from '../Svgs/ReceiptItemSVG';
 import StorebagSVG from '../Svgs/StorebagSVG';
 import UserSVG from '../Svgs/UserSVG';
-
+type NavigationPropsCustom = NativeStackNavigationProp<
+  ProfileScreens,
+  'Profile'
+>;
 const {width, height} = Dimensions.get('screen');
 
 const ProfilePage: React.FC = () => {
+  const navigation = useNavigation<NavigationPropsCustom>();
   return (
     <View style={styles.container}>
-      <View style={styles.profile}>
-        <View style={styles.avatar}>
-          <AnonymouseUser />
-        </View>
-        <Text style={styles.userName}>کاربر مهمان</Text>
-        <Pressable style={styles.loginButton}>
-          <Text style={styles.loginText}>ورود / ثبت نام</Text>
-        </Pressable>
-      </View>
+      <Profile />
       <ScrollView contentContainerStyle={styles.options}>
-        <View style={styles.option}>
+        <View
+          style={styles.option}
+          onTouchEnd={() => navigation.navigate('OrderHistory')}>
           <Text style={styles.optionText}>تاریخچه سفارشات</Text>
           <StorebagSVG />
         </View>
@@ -56,42 +50,6 @@ const ProfilePage: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: '#000000', alignItems: 'center'},
-  profile: {
-    marginTop: height * 0.04,
-    backgroundColor: '#171717',
-    width: width * 0.95,
-    height: height * 0.3,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    paddingVertical: height * 0.02,
-  },
-  avatar: {
-    backgroundColor: '#292929',
-    borderRadius: 8,
-    paddingHorizontal: width * 0.02,
-    paddingVertical: height * 0.005,
-  },
-  userName: {
-    color: '#FFFFFFDE',
-    fontFamily: 'IRANSansX-Regular',
-    fontSize: 18,
-    marginVertical: height * 0.025,
-    opacity: 0.87,
-  },
-  loginButton: {
-    backgroundColor: '#C49D68',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: width * 0.35,
-    height: height * 0.045,
-    borderRadius: 5,
-  },
-  loginText: {
-    color: 'white',
-    fontFamily: 'IRANSansX-Bold',
-  },
   options: {
     display: 'flex',
     flexDirection: 'column',
