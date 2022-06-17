@@ -1,7 +1,7 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import React, {useEffect, useRef} from 'react';
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {Dimensions, StatusBar, StyleSheet, View} from 'react-native';
 import FavoritesStack from './stacks/FavoritesStack';
 import HomeStack from './stacks/HomeStack';
 import MapStack from './stacks/MapStack';
@@ -35,6 +35,7 @@ const App: React.FC<Props> = () => {
   }, [op]);
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="#000000" barStyle={'light-content'} />
       <BottomStackNavigator.Navigator
         initialRouteName="HomeStack"
         screenOptions={{
