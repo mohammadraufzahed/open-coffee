@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   header: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: height * 0.03,
+    marginVertical: height * 0.03,
     alignItems: 'center',
     width: width,
     justifyContent: 'center',

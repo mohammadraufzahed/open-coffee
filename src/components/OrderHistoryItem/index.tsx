@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     width: width * 0.95,
     minHeight: height * 0.15,
     paddingHorizontal: width * 0.05,
+    paddingVertical: height * 0.02,
   },
   header: {
     display: 'flex',
