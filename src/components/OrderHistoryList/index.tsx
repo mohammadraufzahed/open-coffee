@@ -9,6 +9,7 @@ const OrderHistoryList: React.FC = () => {
     <FlatList
       data={[0, 1, 2, 3, 4, 5]}
       keyExtractor={item => item.toString()}
+      style={styles.baseContainer}
       renderItem={OrderHistoryItem}
       contentContainerStyle={styles.container}
       showsVerticalScrollIndicator={false}
@@ -25,6 +26,9 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: height * 0.03,
     width: width * 0.95,
+  },
+  baseContainer: {
+    marginBottom: height * 0.09,
   },
 });
 
