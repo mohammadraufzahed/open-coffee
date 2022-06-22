@@ -52,14 +52,14 @@ const styles = StyleSheet.create({
   },
   tableNumber: {
     color: 'white',
-    fontFamily: 'IRANSansX-Regular',
+    fontFamily: 'IRANSansX-Medium',
     fontSize: 14,
     marginRight: width * 0.31,
   },
   storeName: {
     color: 'white',
     justifyContent: 'flex-start',
-    fontFamily: 'IRANSansX-Regular',
+    fontFamily: 'IRANSansX-Medium',
     fontSize: 14,
     marginRight: width * 0.05,
   },
@@ -74,13 +74,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: height * 0.008,
   },
-  itemName: {color: 'white', fontFamily: 'IRANSansX-Regular', fontSize: 12},
+  itemName: {color: 'white', fontFamily: 'IRANSansX-Medium', fontSize: 12},
   line: {
     width: '70%',
     height: 2,
     backgroundColor: 'white',
   },
-  itemCount: {color: 'white', fontFamily: 'IRANSansX-Regular', fontSize: 12},
+  itemCount: {color: 'white', fontFamily: 'IRANSansX-Medium', fontSize: 12},
 });
 
 export default OrderHistoryItem;

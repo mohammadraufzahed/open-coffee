@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     marginRight: width * 0.06,
     color: 'white',
     fontSize: 16,
-    fontFamily: 'IRANSansX-Regular',
+    fontFamily: 'IRANSansX-Medium',
   },
 });
 

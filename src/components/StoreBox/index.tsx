@@ -1,3 +1,4 @@
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {
   Dimensions,
@@ -7,14 +8,22 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {HomeScreens} from '../../stacks/HomeStack';
 import LocationSVG from '../../Svgs/LocationSVG';
 import StoreBadge from '../StoreBadge';
 
 const {width, height} = Dimensions.get('screen');
 
-const StoreBox = () => {
+type props = {
+  navigation: NativeStackNavigationProp<HomeScreens, 'Home'>;
+};
+
+const StoreBox: React.FC<props> = ({navigation}) => {
   return (
-    <TouchableOpacity style={styles.container} activeOpacity={0.9}>
+    <TouchableOpacity
+      style={styles.container}
+      activeOpacity={0.9}
+      onLongPress={() => navigation.navigate('Store')}>
       <View style={styles.content}>
         <Text style={styles.title}>کافه فرشته</Text>
         <View style={styles.locationContainer}>

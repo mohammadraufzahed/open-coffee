@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     color: 'white',
     marginRight: width * 0.03,
     fontSize: 16,
-    fontFamily: 'IRANSansX-Regular',
+    fontFamily: 'IRANSansX-Medium',
   },
   arrow: {
     position: 'absolute',

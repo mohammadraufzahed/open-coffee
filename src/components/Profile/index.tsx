@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     color: '#FFFFFFDE',
-    fontFamily: 'IRANSansX-Regular',
+    fontFamily: 'IRANSansX-Medium',
     fontSize: 18,
     marginVertical: height * 0.025,
     opacity: 0.87,
