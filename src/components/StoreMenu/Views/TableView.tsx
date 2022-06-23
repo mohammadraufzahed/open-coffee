@@ -18,7 +18,7 @@ const TableView: React.FC = () => {
       <Text style={styles.title}>رزرو میز</Text>
       <View style={styles.list}>
         <FlatList
-          data={[1, 2, 3, 4, 5]}
+          data={Array.from(Array(10).keys())}
           keyExtractor={item => item.toString()}
           renderItem={TableItem}
         />
