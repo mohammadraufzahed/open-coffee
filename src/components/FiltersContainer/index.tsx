@@ -22,13 +22,6 @@ const FiltersContainer: React.FC = () => {
   return (
     <Animated.View style={{...styles.container, opacity: viewOpacity}}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {/* <FlatList
-            data={FilterData}
-            renderItem={item => <FilterItem type={item.item} />}
-            keyExtractor={(_, key) => key.toString()}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-          /> */}
         <FilterItem type="smoke" />
         <FilterItem type="outdoorFood" />
         <FilterItem type="work" />

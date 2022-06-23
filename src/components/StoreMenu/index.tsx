@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import AboutView from './Views/AboutView';
 import CommentsView from './Views/CommentsView';
+import GalleryView from './Views/GalleryView';
 import MenuView from './Views/MenuView';
 import TableView from './Views/TableView';
 
@@ -57,6 +58,8 @@ const StoreMenu: React.FC = () => {
           <TableView />
         ) : menuState === 'comments' ? (
           <CommentsView />
+        ) : menuState === 'gallery' ? (
+          <GalleryView />
         ) : null}
       </View>
     </View>
