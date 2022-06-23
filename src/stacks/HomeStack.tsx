@@ -3,12 +3,12 @@ import React from 'react';
 import HomePage from '../pages/Home.page';
 import StorePage from '../pages/Store.page';
 
-const HomeRootStack = createNativeStackNavigator();
-
 export type HomeScreens = {
   Home: undefined;
   Store: undefined;
 };
+
+const HomeRootStack = createNativeStackNavigator();
 
 const HomeStack = () => {
   return (

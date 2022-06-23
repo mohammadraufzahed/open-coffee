@@ -1,3 +1,5 @@
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
 import StoreMenu from '../components/StoreMenu';
@@ -5,10 +7,14 @@ import ArrowRightSVG from '../Svgs/ArrowRightSVG';
 import HeartSVG from '../Svgs/HeartSVG';
 import LocationSVG from '../Svgs/LocationSVG';
 import StarSVG from '../Svgs/StarSVG';
+import {HomeScreens} from '../stacks/HomeStack';
 
 const {width, height} = Dimensions.get('screen');
 
+type NavigationPropsCustom = NativeStackNavigationProp<HomeScreens, 'Store'>;
+
 const StorePage: React.FC = () => {
+  const navigation = useNavigation<NavigationPropsCustom>();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -22,7 +28,7 @@ const StorePage: React.FC = () => {
         </View>
         <View style={styles.headerTop}>
           <HeartSVG />
-          <ArrowRightSVG />
+          <ArrowRightSVG onPress={() => navigation.goBack()} />
         </View>
         <View style={styles.stars}>
           {[0, 1, 2, 3, 4].map(item => (
@@ -92,6 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: width * 0.02,
     paddingVertical: height * 0.01,
+    zIndex: 1000,
   },
   stars: {
     display: 'flex',
